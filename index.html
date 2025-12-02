@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukhi CSC App</title>
+  <title>CSC App - Sukhi</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+    .box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #999;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to Sukhi CSC App</h1>
-    <p>This is your first GitHub hosted page.</p>
+
+<h2>📄 Sukhi CSC App</h2>
+<p>Select a form:</p>
+
+<div id="formList"></div>
+
+<script>
+  fetch("form-list.json")
+    .then(res => res.json())
+    .then(data => {
+      let html = "";
+      data.forms.forEach(f => {
+        html += `
+          <div class='box'>
+            <h3>${f.name}</h3>
+            <p><b>Documents:</b> ${f.documents.join(", ")}</p>
+            <p><b>Fees:</b> ₹${f.fees}</p>
+          </div>
+        `;
+      });
+      document.getElementById("formList").innerHTML = html;
+    });
+</script>
+
 </body>
 </html>
