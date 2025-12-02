@@ -1,0 +1,19 @@
+{
+  "forms": [
+    {
+      "name": "PAN Card",
+      "documents": ["Aadhar Card", "Photo", "Mobile Number"],
+      "fees": 120
+    },
+    {
+      "name": "Aadhar Update",
+      "documents": ["Old Aadhar", "New Mobile Number"],
+      "fees": 100
+    },
+    {
+      "name": "Caste Certificate",
+      "documents": ["Aadhar Card", "Ration Card", "Photo"],
+      "fees": 150
+    }
+  ]
+}
